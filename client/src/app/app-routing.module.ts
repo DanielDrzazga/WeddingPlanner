@@ -4,7 +4,7 @@ import { GuestListComponent } from './guest-list/guest-list.component';
 
 
 const routes: Routes = [
-  { path: 'guest', component: GuestListComponent },
+  { path: 'guests', component: GuestListComponent },
 ];
 
 @NgModule({
