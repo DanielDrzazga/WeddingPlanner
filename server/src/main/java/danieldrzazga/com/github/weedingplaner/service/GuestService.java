@@ -10,4 +10,6 @@ import java.util.Collection;
 public interface GuestService {
 
     Collection<GuestDto> findAll();
+
+    void saveAndUpdate(GuestDto guestDto);
 }

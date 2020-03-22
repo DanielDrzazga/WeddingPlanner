@@ -2,9 +2,7 @@ package danieldrzazga.com.github.weedingplaner.controllers;
 
 import danieldrzazga.com.github.weedingplaner.dtos.GuestDto;
 import danieldrzazga.com.github.weedingplaner.service.GuestService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
@@ -25,4 +23,11 @@ public class GuestController {
     public Collection<GuestDto> getGuests(){
         return guestService.findAll();
     }
+
+    @PostMapping("/guests")
+    public void addGuest(@RequestBody GuestDto guestDto){
+        guestService.saveAndUpdate(guestDto);
+    }
+
+
 }

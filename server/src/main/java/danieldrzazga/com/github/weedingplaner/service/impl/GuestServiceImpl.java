@@ -35,4 +35,9 @@ public class GuestServiceImpl implements GuestService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public void saveAndUpdate(GuestDto guestDto) {
+        guestRepository.save(mapperFacade.map(guestDto, Guest.class));
+    }
+
 }

@@ -6,11 +6,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { GuestListComponent } from './guest-list/guest-list.component';
 import { GuestService } from './service/guest.service';
+import { GuestFormComponent } from './guest-form/guest-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GuestListComponent,
+    GuestFormComponent,
   ],
   imports: [
     BrowserModule,

@@ -17,7 +17,7 @@ export class GuestService {
     return this.http.get<Guest[]>(this.guestsUrl);
   }
 
-  public save(guest: Guest) {
+  public createGuest(guest: Guest) {
     return this.http.post<Guest>(this.guestsUrl, guest);
   }
 }
