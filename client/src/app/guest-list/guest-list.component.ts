@@ -24,8 +24,7 @@ export class GuestListComponent implements OnInit {
   }
 
   deleteGuest(id: number) {
-    this.guestService.removeGuest(id).subscribe(value => this.gotoGuestList());
-    window.location.reload();
+    this.guestService.removeGuest(id).subscribe(value => this.ngOnInit());
   }
 
   private gotoGuestList() {

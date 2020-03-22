@@ -7,14 +7,14 @@
         <input type="text" [(ngModel)]="guest.firstName" class="form-control" id="firstName" name="firstName"
                value="{{guest.firstName}}" placeholder="Enter First Name" required #firstName="ngModel">
       </div>
-      <div [hidden]="!firstName.pristine" class="alert alert-danger">First Name is required</div>
+      <div [hidden]="firstName.value" class="alert alert-danger">First Name is required</div>
 
       <div class="form-group">
         <label for="lastName">Last Name</label>
         <input type="text" [(ngModel)]="guest.lastName" class="form-control" id="lastName" name="lastName"
                placeholder="Enter Last Name" required #lastName="ngModel">
       </div>
-      <div [hidden]="!lastName.pristine" class="alert alert-danger">Last Name is required</div>
+      <div [hidden]="lastName.value" class="alert alert-danger">Last Name is required</div>
 
       <button type="submit" [disabled]="!guestForm.form.valid" class="btn btn-info">Save</button>
       <button (click)="deleteGuest(guest.id)" class="btn btn-danger">Delete</button>
