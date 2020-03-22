@@ -10,3 +10,4 @@ The main idea is to create an application using:
 <li>Lombok</li>
 <li>spring-boot-starter-web</li>
 <li>spring-boot-starter-jpa</li>
+<li>Orika Mapper</li>
