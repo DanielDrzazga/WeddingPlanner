@@ -8,33 +8,27 @@ import {Observable} from 'rxjs';
 export class GuestService {
 
   private guestsUrl: string;
+  private guestUrl: string;
 
   constructor(private http: HttpClient) {
     this.guestsUrl = 'http://localhost:8080/guests';
-  }
-
-  private option(guest: Guest) {
-    return {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      }),
-      body: {
-        firstName: guest.firstName,
-        lastName: guest.lastName
-      }
-    };
+    this.guestUrl = 'http://localhost:8080/guest';
   }
 
   public findAll(): Observable<Guest[]> {
     return this.http.get<Guest[]>(this.guestsUrl);
   }
 
+  public findById(id) {
+    return this.http.get<Guest>(this.guestUrl + '/' + id);
+  }
+
   public createGuest(guest: Guest) {
     return this.http.post<Guest>(this.guestsUrl, guest);
   }
 
-  public removeGuest(guest: Guest) {
-    return this.http.delete(this.guestsUrl, this.option(guest));
+  public removeGuest(id) {
+    return this.http.delete(this.guestUrl + '/' + id);
   }
 
 }

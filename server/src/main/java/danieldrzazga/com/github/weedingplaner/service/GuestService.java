@@ -13,6 +13,7 @@ public interface GuestService {
 
     void saveAndUpdate(GuestDto guestDto);
 
-    void delete(GuestDto guestDto);
+    void deleteById(long id);
 
+    GuestDto findById(long id);
 }

@@ -23,12 +23,20 @@ export class GuestListComponent implements OnInit {
     });
   }
 
-  deleteGuest(guest: Guest) {
-    this.guestService.removeGuest(guest).subscribe(value => this.gotoGuestList());
+  deleteGuest(id: number) {
+    this.guestService.removeGuest(id).subscribe(value => this.gotoGuestList());
     window.location.reload();
   }
 
   private gotoGuestList() {
     this.router.navigate(['/guests']);
+  }
+
+  editGuest(id: number) {
+    this.guestService.findById(id).subscribe(value => this.gotoGuestView(id));
+  }
+
+  private gotoGuestView(id: number) {
+    this.router.navigate(['/guests/' + id]);
   }
 }

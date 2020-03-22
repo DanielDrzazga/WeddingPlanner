@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { GuestListComponent } from './guest-list/guest-list.component';
 import { GuestService } from './service/guest.service';
 import { GuestFormComponent } from './guest-form/guest-form.component';
+import { GuestViewComponent } from './guest-view/guest-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GuestListComponent,
     GuestFormComponent,
+    GuestViewComponent,
   ],
   imports: [
     BrowserModule,

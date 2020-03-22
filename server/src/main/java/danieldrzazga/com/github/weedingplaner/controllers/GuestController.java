@@ -24,14 +24,19 @@ public class GuestController {
         return guestService.findAll();
     }
 
+    @GetMapping("/guest/{id}")
+    public GuestDto getGuest(@PathVariable("id") long id){
+        return guestService.findById(id);
+    }
+
     @PostMapping("/guests")
     public void addGuest(@RequestBody GuestDto guestDto){
         guestService.saveAndUpdate(guestDto);
     }
 
-    @DeleteMapping("/guests")
-    public void removeGuest(@RequestBody GuestDto guestDto){
-        guestService.delete(guestDto);
+    @DeleteMapping("/guest/{id}")
+    public void removeGuest(@PathVariable("id") long id){
+        guestService.deleteById(id);
     }
 
 }

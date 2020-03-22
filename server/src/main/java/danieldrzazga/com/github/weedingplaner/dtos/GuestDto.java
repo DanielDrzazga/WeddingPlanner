@@ -10,6 +10,7 @@ import lombok.Setter;
 @Setter
 public class GuestDto {
 
+    private long id;
     private String firstName;
     private String lastName;
 

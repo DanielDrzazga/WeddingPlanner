@@ -13,7 +13,8 @@
           <td>{{ guest.firstName }}</td>
           <td>{{ guest.lastName }}</td>
           <td>
-            <button class="btn btn-danger" (click)="deleteGuest(guest)">Delete</button>
+            <button class="btn btn-primary" (click)="editGuest(guest.id)">Edit</button>
+            <button class="btn btn-danger" (click)="deleteGuest(guest.id)">Delete</button>
           </td>
         </tr>
       </tbody>

@@ -31,22 +31,23 @@ public class GuestServiceImpl implements GuestService {
 
         return guests
                 .stream()
-                .map(guest -> mapperFacade.map(guest,GuestDto.class))
+                .map(guest -> mapperFacade.map(guest, GuestDto.class))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public GuestDto findById(long id) {
+        return mapperFacade.map(guestRepository.findById(id).get(), GuestDto.class);
+    }
+
+    @Override
+    public void deleteById(long id) {
+        guestRepository.delete(guestRepository.findById(id).get());
     }
 
     @Override
     public void saveAndUpdate(GuestDto guestDto) {
         guestRepository.save(mapperFacade.map(guestDto, Guest.class));
-    }
-
-    @Override
-    public void delete(GuestDto guestDto) {
-        Guest guest = guestRepository.findByFirstNameAndLastName(guestDto.getFirstName(),guestDto.getLastName());
-
-        if (guest != null){
-            guestRepository.delete(guest);
-        }
     }
 
 }
