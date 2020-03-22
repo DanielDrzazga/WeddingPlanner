@@ -17,7 +17,7 @@ export class GuestFormComponent {
   }
 
   onSubmit() {
-    this.guestService.createGuest(this.guest).subscribe(data => this.gotoGuestList());
+    this.guestService.createGuest(this.guest).subscribe(value => this.gotoGuestList());
   }
 
   private gotoGuestList() {

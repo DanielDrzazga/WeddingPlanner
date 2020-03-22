@@ -40,4 +40,13 @@ public class GuestServiceImpl implements GuestService {
         guestRepository.save(mapperFacade.map(guestDto, Guest.class));
     }
 
+    @Override
+    public void delete(GuestDto guestDto) {
+        Guest guest = guestRepository.findByFirstNameAndLastName(guestDto.getFirstName(),guestDto.getLastName());
+
+        if (guest != null){
+            guestRepository.delete(guest);
+        }
+    }
+
 }

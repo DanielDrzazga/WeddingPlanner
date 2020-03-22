@@ -5,12 +5,16 @@
         <tr>
           <th scope="col">First Name</th>
           <th scope="col">Last Name</th>
+          <th scope="col"></th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let guest of guests">
           <td>{{ guest.firstName }}</td>
           <td>{{ guest.lastName }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="deleteGuest(guest)">Delete</button>
+          </td>
         </tr>
       </tbody>
     </table>

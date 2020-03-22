@@ -12,9 +12,9 @@
       <div class="form-group">
         <label for="lastName">Last Name</label>
         <input type="text" [(ngModel)]="guest.lastName" class="form-control" id="lastName" name="lastName"
-               placeholder="Enter Last Name" required #lastname="ngModel">
+               placeholder="Enter Last Name" required #lastName="ngModel">
       </div>
-      <div [hidden]="!lastname.pristine" class="alert alert-danger">Last Name is required</div>
+      <div [hidden]="!lastName.pristine" class="alert alert-danger">Last Name is required</div>
 
       <button type="submit" [disabled]="!guestForm.form.valid" class="btn btn-info">Submit</button>
 

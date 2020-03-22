@@ -29,5 +29,9 @@ public class GuestController {
         guestService.saveAndUpdate(guestDto);
     }
 
+    @DeleteMapping("/guests")
+    public void removeGuest(@RequestBody GuestDto guestDto){
+        guestService.delete(guestDto);
+    }
 
 }

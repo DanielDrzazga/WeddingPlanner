@@ -12,4 +12,7 @@ public interface GuestService {
     Collection<GuestDto> findAll();
 
     void saveAndUpdate(GuestDto guestDto);
+
+    void delete(GuestDto guestDto);
+
 }
