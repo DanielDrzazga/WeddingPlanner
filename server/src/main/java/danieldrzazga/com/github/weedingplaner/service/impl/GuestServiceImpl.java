@@ -1,6 +1,7 @@
 package danieldrzazga.com.github.weedingplaner.service.impl;
 
 import danieldrzazga.com.github.weedingplaner.dtos.GuestDto;
+import danieldrzazga.com.github.weedingplaner.exceptions.GuestNotFoundException;
 import danieldrzazga.com.github.weedingplaner.model.Guest;
 import danieldrzazga.com.github.weedingplaner.repositories.GuestRepository;
 import danieldrzazga.com.github.weedingplaner.service.GuestService;
@@ -37,7 +38,8 @@ public class GuestServiceImpl implements GuestService {
 
     @Override
     public GuestDto findById(long id) {
-        return mapperFacade.map(guestRepository.findById(id).get(), GuestDto.class);
+        return mapperFacade.map(guestRepository.findById(id).orElseThrow( () -> new GuestNotFoundException(id))
+                , GuestDto.class);
     }
 
     @Override
