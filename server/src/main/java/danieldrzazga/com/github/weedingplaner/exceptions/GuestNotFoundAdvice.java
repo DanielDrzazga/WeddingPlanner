@@ -13,7 +13,7 @@ public class GuestNotFoundAdvice {
 
     @ExceptionHandler(GuestNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public String GuestNotFoundHandler(GuestNotFoundException e) {
+    public String guestNotFoundHandler(GuestNotFoundException e) {
         return e.getMessage();
     }
 

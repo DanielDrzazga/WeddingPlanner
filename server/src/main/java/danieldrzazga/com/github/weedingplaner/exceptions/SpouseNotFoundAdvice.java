@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
  * Created by "Daniel Drzazga" on 27.03.2020
  */
 @RestControllerAdvice
-public class TokenNotFoundAdvice {
+public class SpouseNotFoundAdvice {
 
-    @ExceptionHandler(TokenNotFoundException.class)
+    @ExceptionHandler(SpouseNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public String tokenNotFoundHandler(TokenNotFoundException e){
+    public String spouseNotFoundException(SpouseNotFoundException e){
         return e.getMessage();
     }
 
