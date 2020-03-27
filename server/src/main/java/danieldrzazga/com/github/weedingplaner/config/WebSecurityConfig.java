@@ -1,6 +1,6 @@
 package danieldrzazga.com.github.weedingplaner.config;
 
-import danieldrzazga.com.github.weedingplaner.service.impl.SpouseServiceImp;
+import danieldrzazga.com.github.weedingplaner.service.impl.SpouseDetailsServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -15,9 +15,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private final SpouseServiceImp spouseService;
+    private final SpouseDetailsServiceImpl spouseService;
 
-    public WebSecurityConfig(SpouseServiceImp spouseService) {
+    public WebSecurityConfig(SpouseDetailsServiceImpl spouseService) {
         this.spouseService = spouseService;
     }
 
