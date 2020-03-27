@@ -7,12 +7,13 @@ import lombok.Getter;
  */
 @Getter
 public enum Role {
-    ADMIN ("ADMIN"),
-    SPOUSE ("SPOUSE");
+    ADMIN ("ROLE_ADMIN"),
+    SPOUSE ("ROLE_SPOUSE");
 
     private final String role;
 
     Role(final String role) {
         this.role = role;
     }
+
 }
