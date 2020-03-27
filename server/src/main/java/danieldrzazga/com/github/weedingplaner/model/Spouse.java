@@ -22,23 +22,19 @@ import java.util.Collections;
 public class Spouse extends AbstractEntity implements UserDetails {
 
     @Column(unique = true)
-    private String email;
-
-    @Column(unique = true)
     private String username;
-
     private String password;
-    private Role role;
+    private String role;
     private boolean isEnabled;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.singleton(new SimpleGrantedAuthority(role.getRole()));
+        return Collections.singleton(new SimpleGrantedAuthority(role));
     }
 
     @Override
     public String getUsername() {
-        return this.email;
+        return this.username;
     }
 
     @Override
